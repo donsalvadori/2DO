@@ -4,14 +4,14 @@ var TodoItem = Backbone.Model.extend({
 		isCompleted: false
 	},
 
-	url: "fakeUrl",
+	urlRoot: "http://jsonplaceholer.typicode.com/todos",
 
 	validate: function(attrs){
-		if (!attrs.description)
-			return "Description is required.";
+		if (!attrs.title)
+			return "Title is required.";
 	},
 
 	toggle: function(){
-		this.set("isCompleted", !this.get("isCompleted"));
+		this.set("completed", !this.get("completed"));
 	}
 });
